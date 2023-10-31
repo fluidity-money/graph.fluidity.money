@@ -1,0 +1,143 @@
+type Approval @entity(immutable: true) {
+  id: Bytes!
+  owner: Bytes! # address
+  spender: Bytes! # address
+  value: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type BlockedReward @entity(immutable: true) {
+  id: Bytes!
+  winner: Bytes! # address
+  amount: BigInt! # uint256
+  startBlock: BigInt! # uint256
+  endBlock: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type BurnFluid @entity(immutable: true) {
+  id: Bytes!
+  addr: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Emergency @entity(immutable: true) {
+  id: Bytes!
+  status: Boolean! # bool
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type FeeSet @entity(immutable: true) {
+  id: Bytes!
+  _originalMintFee: BigInt! # uint256
+  _newMintFee: BigInt! # uint256
+  _originalBurnFee: BigInt! # uint256
+  _newBurnFee: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type MaxUncheckedRewardLimitChanged @entity(immutable: true) {
+  id: Bytes!
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type MintApproval @entity(immutable: true) {
+  id: Bytes!
+  owner: Bytes! # address
+  spender: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type MintFluid @entity(immutable: true) {
+  id: Bytes!
+  addr: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type NewCouncil @entity(immutable: true) {
+  id: Bytes!
+  oldCouncil: Bytes! # address
+  newCouncil: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type NewOperator @entity(immutable: true) {
+  id: Bytes!
+  old: Bytes! # address
+  new_: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type NewUnderlyingAsset @entity(immutable: true) {
+  id: Bytes!
+  _old: Bytes! # address
+  _new: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Reward @entity(immutable: true) {
+  id: Bytes!
+  winner: Bytes! # address
+  amount: BigInt! # uint256
+  startBlock: BigInt! # uint256
+  endBlock: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type RewardQuarantineThresholdUpdated @entity(immutable: true) {
+  id: Bytes!
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Transfer @entity(immutable: true) {
+  id: Bytes!
+  from: Bytes! # address
+  to: Bytes! # address
+  value: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type UnblockReward @entity(immutable: true) {
+  id: Bytes!
+  originalRewardTx: Bytes! # bytes32
+  winner: Bytes! # address
+  amount: BigInt! # uint256
+  startBlock: BigInt! # uint256
+  endBlock: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

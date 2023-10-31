@@ -1,0 +1,8 @@
+{
+  "arbitrum-one": {
+    "Fluid USDC": {
+      "address": "0x1502372f24fb35ef261ce53af8e04a1842118dc8",
+      "startBlock": 110688035
+    }
+  }
+}

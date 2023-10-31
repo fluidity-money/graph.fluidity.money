@@ -1,0 +1,66 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Fluid USDC
+    network: arbitrum-one
+    source:
+      address: "0x1502372f24fb35ef261ce53af8e04a1842118dc8"
+      abi: Fluid USDC
+      startBlock: 110688035
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Approval
+        - BlockedReward
+        - BurnFluid
+        - Emergency
+        - FeeSet
+        - MaxUncheckedRewardLimitChanged
+        - MintApproval
+        - MintFluid
+        - NewCouncil
+        - NewOperator
+        - NewUnderlyingAsset
+        - Reward
+        - RewardQuarantineThresholdUpdated
+        - Transfer
+        - UnblockReward
+      abis:
+        - name: Fluid USDC
+          file: ./abis/Fluid USDC.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,uint256)
+          handler: handleApproval
+        - event: BlockedReward(indexed address,uint256,uint256,uint256)
+          handler: handleBlockedReward
+        - event: BurnFluid(indexed address,uint256)
+          handler: handleBurnFluid
+        - event: Emergency(indexed bool)
+          handler: handleEmergency
+        - event: FeeSet(uint256,uint256,uint256,uint256)
+          handler: handleFeeSet
+        - event: MaxUncheckedRewardLimitChanged(uint256)
+          handler: handleMaxUncheckedRewardLimitChanged
+        - event: MintApproval(indexed address,indexed address,uint256)
+          handler: handleMintApproval
+        - event: MintFluid(indexed address,uint256)
+          handler: handleMintFluid
+        - event: NewCouncil(indexed address,indexed address)
+          handler: handleNewCouncil
+        - event: NewOperator(address,address)
+          handler: handleNewOperator
+        - event: NewUnderlyingAsset(address,address)
+          handler: handleNewUnderlyingAsset
+        - event: Reward(indexed address,uint256,uint256,uint256)
+          handler: handleReward
+        - event: RewardQuarantineThresholdUpdated(uint256)
+          handler: handleRewardQuarantineThresholdUpdated
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+        - event: UnblockReward(indexed bytes32,indexed address,uint256,uint256,uint256)
+          handler: handleUnblockReward
+      file: ./src/fluid-usdc.ts
