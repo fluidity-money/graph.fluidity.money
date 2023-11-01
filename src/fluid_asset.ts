@@ -14,7 +14,7 @@ import {
   RewardQuarantineThresholdUpdated as RewardQuarantineThresholdUpdatedEvent,
   Transfer as TransferEvent,
   UnblockReward as UnblockRewardEvent
-} from "../generated/Fluid USDC/Fluid USDC"
+} from "../generated/Fluid USDC/fluid_asset"
 import {
   Approval,
   BlockedReward,

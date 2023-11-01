@@ -8,7 +8,7 @@ import {
 } from "matchstick-as/assembly/index"
 import { Address, BigInt, Bytes } from "@graphprotocol/graph-ts"
 import { Approval } from "../generated/schema"
-import { Approval as ApprovalEvent } from "../generated/Fluid USDC/Fluid USDC"
+import { Approval as ApprovalEvent } from "../generated/Fluid USDC/fluid_asset"
 import { handleApproval } from "../src/fluid-usdc"
 import { createApprovalEvent } from "./fluid-usdc-utils"
 

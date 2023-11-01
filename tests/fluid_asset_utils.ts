@@ -16,7 +16,7 @@ import {
   RewardQuarantineThresholdUpdated,
   Transfer,
   UnblockReward
-} from "../generated/Fluid USDC/Fluid USDC"
+} from "../generated/Fluid USDC/fluid_asset"
 
 export function createApprovalEvent(
   owner: Address,
